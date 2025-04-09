@@ -19,7 +19,7 @@ requirements:
   host:
     - python {{ python_min }}
     - poetry
-    - poetry-dynamic-versioning
+    - poetry-dynamic-versioning-plugin
     - pip
   run:
     - python >={{ python_min }}
