@@ -1,5 +1,5 @@
 {% set name = "orb-models" %}
-{% set version = "0.4.2" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/orb_models-{{ version }}.tar.gz
-  sha256: 3edc3a484b536fa45b839858fb0144afd6e92d822271eb91c1b1edab0db653d8
+  sha256: f644d47a1f98268a9bf91d7e8aeb15c4a456bb160971a3ecd032ab710b68be89
 
 build:
   noarch: python
@@ -21,12 +21,12 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - cached_path >=1.6.2
-    - ase >=3.23.0
+    - cached_path >=1.6.7
+    - ase >=3.24.0
     - numpy >=1.26.4
-    - scipy >=1.13.1
-    - pytorch >=2.2.0,<3.0.0
-    - dm-tree >=0.1.8
+    - scipy >=1.15.1
+    - pytorch >=2.6.0,<3.0.0
+    - dm-tree ==0.1.8
     - tqdm >=4.66.5
 
 test:
