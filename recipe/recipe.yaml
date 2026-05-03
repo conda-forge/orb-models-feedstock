@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: orb-models
-  version: "0.4.2"
+  version: 0.6.2
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/orb_models-${{ version }}.tar.gz
-  sha256: 3edc3a484b536fa45b839858fb0144afd6e92d822271eb91c1b1edab0db653d8
+  sha256: 2965c533e1917acc578ffcb3bb46f7ce982ebbf35648a64bb178cb8bbad38a74
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -24,14 +24,13 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - cached_path >=1.6.2
-    - ase >=3.23.0
-    - numpy >=1.26.4
-    - scipy >=1.13.1
-    - pytorch >=2.2.0,<3.0.0
-    - dm-tree >=0.1.8
-    - tqdm >=4.66.5
-
+    - cached_path >=1.7.1
+    - ase >=3.25.0,<4
+    - scipy >=1.15.1
+    - pytorch >=2.8.0,<3.0.0
+    - dm-tree ==0.1.8
+    - tqdm >=4.67.1
+    - nvalchemi-toolkit-ops >=0.3.0
 tests:
   - python:
       imports:
